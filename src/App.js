@@ -2,6 +2,43 @@ import logo from './logo.svg';
 import './App.css';
 
 function App() {
+
+  const basketballTeam = {
+    center: "Joel Embiid",
+    powerForward: "Anthony Davis",
+    smallForward: "LeBron James",
+    shootingGuard: "James Harden",
+    pointGuard: "Stephen Curry",
+  };
+
+  const filterFruits = [
+    "strawberry",
+    "banana",
+    "apple",
+    "blueberry",
+    "orange",
+    "grape",
+  ];
+
+  const renderBasketballTeam = (data) => {
+    return Object.entries(data).map(([key, value]) => (
+      <li key={key}>{`${key} ${value}`}</li>
+    ));
+  };
+
+  const renderBasketballTeam2 = (data) => {
+    return Object.entries(data).map(([key, value]) => (
+      <li key={key}>{`${key} ${value}`}</li>
+    ));
+  };
+ 
+const renderFilterFruits = (fruits) => {
+return Object.entries(fruits).map(([key, value]) => (
+  <li key={key}>{`${key} ${value}`}</li>
+));
+
+}
+
   return (
     <div className="App">
       <header className="App-header">
@@ -17,9 +54,32 @@ function App() {
         >
           Learn React
         </a>
-      </header>
+        </header>
+
+
+    <h1>Problem 1 - Render Basketball Team</h1>
+    <ul>
+      {renderBasketballTeam(basketballTeam)}
+    </ul>
+
+    <h1>Problem 2 - Refactor, On No Team Display something sane</h1>
+    <ul>
+      {renderBasketballTeam2(basketballTeam)}
+    </ul>
+
+    <h1>Problem 3 - show fruits</h1>
+    <ul>
+      {renderFilterFruits(filterFruits)}
+    </ul>
+      
+      
     </div>
+    
+    
   );
+
+  
 }
+
 
 export default App;

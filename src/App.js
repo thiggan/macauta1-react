@@ -36,6 +36,17 @@ function App() {
     }
 };
 
+const filterFruits1 = (data) => {
+
+  if (data){
+    return Object.entries(data).map(([key, value]) => (
+      <li key={key}>{`${key} ${value}`}</li>
+    ));
+    } else{
+      return <li>No fruits provided</li>
+    }
+}
+
 
 
 const renderFilterFruits = (fruits) => {
@@ -68,9 +79,9 @@ return (
       {renderBasketballTeam(basketballTeam)}
     </ul>
 
-    <h1>Problem 2 - Refactor, On No Team Display something sane</h1>
+    <h1>Problem 2 - Refactor, On No Team Display</h1>
     <ul>
-      {displayTeam(basketballTeam)}
+      {displayTeam(null)}
     </ul>
 
     <h1>Problem 3 - show fruits</h1>
@@ -78,6 +89,10 @@ return (
       {renderFilterFruits(filterFruits)}
     </ul>
 
+  	<h1>Problem 4 Refactor fruits</h1>
+  <ul>
+    {filterFruits1(null)}
+  </ul>
 
   </div>
 

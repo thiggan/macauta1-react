@@ -1,5 +1,7 @@
 import logo from './logo.svg';
 import './App.css';
+import Welcome from "./components/Welcome"; // Importing the Welcome function component
+
 
 function App() {
 
@@ -93,6 +95,9 @@ return (
   <ul>
     {filterFruits1(null)}
   </ul>
+
+ <h1>using Welcome component</h1>
+ <Welcome /> {/* Self-closing tag. <Welcome></Welcome> are equivalent */}
 
   </div>
 
